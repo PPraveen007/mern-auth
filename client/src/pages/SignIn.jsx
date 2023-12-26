@@ -5,7 +5,7 @@ import {
   signInStart,
   signInSuccess,
   signInFailure,
-} from "../../redux/user/userSlice";
+} from "../redux/user/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 // import { useDispatch } from 'react-redux';
 
