@@ -29,12 +29,15 @@ export default function SignIn() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
+        credentials: 'include',
+        // mode: 'same-origin',
       });
       const data = await res.json();
       if (data.success === false) {
         dispatch(signInFailure(data));
         return;
       }
+      console.log(data)
       dispatch(signInSuccess(data));
       navigate("/");
     } catch (error) {
@@ -69,7 +72,7 @@ export default function SignIn() {
       </form>
       <div className="flex gap-2 mt-5">
         <p>Dont Have an account?</p>
-        <Link to="/sign-up">
+        <Link to="/signup">
           <span className="text-blue-500">Sign up</span>
         </Link>
       </div>
