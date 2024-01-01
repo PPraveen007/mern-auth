@@ -94,6 +94,7 @@ export default function Profile() {
         `http://localhost:3000/api/user/delete/${currentUser._id}`,
         {
           method: "DELETE",
+          credentials: "include",
         }
       );
       const data = await res.json();
