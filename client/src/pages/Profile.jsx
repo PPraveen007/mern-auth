@@ -110,12 +110,18 @@ export default function Profile() {
 
   const handleSignOut = async () => {
     try {
-      await fetch("http://localhost:3000/api/auth/signout"),
+      await fetch("http://localhost:3000/api/auth/signout",
+      {
+        method:"POST",
+      }),
+     
       dispatch(signOut());
     } catch (error) {
       console.log(error);
     }
   };
+
+
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
